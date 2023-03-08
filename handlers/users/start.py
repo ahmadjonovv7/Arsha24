@@ -7,7 +7,7 @@ from loader import dp, obyekt, bot
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
-    await message.answer(f"sss, {message.from_user.full_name}!",reply_markup=menu_buttons)
+    await message.answer(f"Assalomu alaykum sizni Supreme uz botda korganimizdan hursandmiz, {message.from_user.full_name}!",reply_markup=menu_buttons)
 
 
 
@@ -21,7 +21,7 @@ async def bot_start(message: types.Message):
         obyekt.user_qoshish(ism=ism,tg_id=user_id,fam=familya,username=username)
     except Exception:
         pass
-    await message.answer(f"sss, {message.from_user.full_name}!")
+    await message.answer(f"{message.from_user.full_name}!")
 
 
 @dp.message_handler(commands='reklama', chat_id ='1358690178')
@@ -69,15 +69,19 @@ print(menular)
 async def bot_start(message: types.Message):
     text = message.text
     print(text)
+    """(1, 'krasofka', 'https://t.me/turkiyadonali/6327', 219, 'Dastafka bepul', 'Oyoq kiyimlar 👟')"""
     maxsulot = obyekt.select_maxsulot(nomi=text)
     max_nomi = maxsulot[1]
     max_narxi = maxsulot[3]
     max_rasmi = maxsulot[2]
     max_text = maxsulot[4]
     user_id = message.from_user.id
-    malumot = f"Nomi➡️: {max_nomi} \n" \
-              f"💰 Narxi : {max_narxi} \n" \
-              f"🚚{max_text} \n"
+    malumot = f"#New Collection  \n \n" \
+              f"🔠 Бренд: {max_nomi} \n" \
+              f"💸Цена: {max_narxi} \n" \
+              f"👣 Размер: 6055 \n"\
+              f"🚚 Быстрая доставка{max_text} \n \n" \
+              f"🧑🏻‍💻 Buyurtma berish uchun: @ahmadjonovv7 \n"
     await bot.send_photo(chat_id=user_id,photo=max_rasmi,caption=malumot)
 
 
