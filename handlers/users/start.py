@@ -56,7 +56,7 @@ async def bot_start(message: types.Message):
         else:
             keys[index].append(KeyboardButton(text=f'{menu[1]}', ))
         j += 1
-    keys.append([KeyboardButton(text='Ortga')])
+    keys.append([KeyboardButton(text='Bosh menu ⬆️')])
     maxsulot_buttons = ReplyKeyboardMarkup(keyboard=keys, resize_keyboard=True)
     user_id = message.from_user.id
     await bot.send_message(chat_id=user_id,text='Maxsulotlarni tanlang',reply_markup=maxsulot_buttons)
@@ -88,12 +88,15 @@ async def bot_start(message: types.Message):
 
 
 
-
-
-
-
-
-
+# """https://dog.ceo/api/breeds/image/random"""
+#
+# import requests
+# @dp.message_handler(commands='dogs')
+# async def bot_start(message: types.Message):
+#     url_manzil = "https://dog.ceo/api/breeds/image/random"
+#     malumot = requests.get(url_manzil).json()
+#     rasm_manzili = malumot['message']
+#     await bot.send_photo(chat_id=message.from_user.id,photo=rasm_manzili)
 
 
 
