@@ -61,39 +61,39 @@ class Database:
         return self.execute("SELECT COUNT(*) FROM users;", fetchone=True)
 
 
-    def user_qoshish(self, ism:str,tg_id = int,fam:str = None,username:str=None):
+    def user_qoshish(self, ism:str,date:str,tg_id = int, fam:str = None,username:str=None):
 
         sql = """
-            INSERT INTO users(ism,fam,tg_id,username) VALUES(?, ?, ?, ?)
+            INSERT INTO myfiles_azolar(ism,fam,tg_id,username,date) VALUES(?, ?, ?, ?, ?)
             """
-        self.execute(sql,paratmetrs=(ism,fam,tg_id,username), commit=True)
+        self.execute(sql,paratmetrs=(ism,fam,tg_id,username,date), commit=True)
     def selecet_barcha_user(self):
         sql = """
-           SELECT * FROM users 
+           SELECT * FROM myfiles_azolar 
            """
         return self.execute(sql,fetchall=True)
 
     def selecet_barcha_menular(self):
         sql = """
-           SELECT * FROM menu 
+           SELECT * FROM myfiles_menu 
            """
         return self.execute(sql,fetchall=True)
 
     def select_maxsulotlar(self, **kwargs):
 
-        sql = "SELECT * FROM maxsulotlar WHERE "
+        sql = "SELECT * FROM myfiles_maxsulot WHERE "
         sql, paratmetrs = self.format_args(sql, kwargs)
         return self.execute(sql, paratmetrs=paratmetrs,fetchall=True)
 
     def select_maxsulot(self, **kwargs):
 
-        sql = "SELECT * FROM maxsulotlar WHERE "
+        sql = "SELECT * FROM myfiles_maxsulot WHERE "
         sql, paratmetrs = self.format_args(sql, kwargs)
         return self.execute(sql, paratmetrs=paratmetrs,fetchone=True)
 
     def selecet_XAMMA_maxsulotlar(self):
         sql = """
-           SELECT * FROM maxsulotlar 
+           SELECT * FROM myfiles_maxsulot 
            """
         return self.execute(sql,fetchall=True)
 def logger(statement):

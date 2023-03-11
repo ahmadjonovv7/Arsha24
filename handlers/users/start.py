@@ -1,3 +1,5 @@
+import datetime
+
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
@@ -17,8 +19,9 @@ async def bot_start(message: types.Message):
     familya = message.from_user.last_name
     username = message.from_user.username
     user_id = message.from_user.id
+    date = datetime.datetime.now()
     try:
-        obyekt.user_qoshish(ism=ism,tg_id=user_id,fam=familya,username=username)
+        obyekt.user_qoshish(ism=ism,tg_id=user_id,fam=familya,username=username,date=date)
     except Exception:
         pass
     await message.answer(f"{message.from_user.full_name}!")

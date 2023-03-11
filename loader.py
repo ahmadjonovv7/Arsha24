@@ -8,4 +8,4 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
 
-obyekt = Database(baza_manzil='baza.db')
+obyekt = Database(baza_manzil='db.sqlite3')
