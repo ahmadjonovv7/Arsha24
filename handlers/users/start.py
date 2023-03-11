@@ -47,7 +47,8 @@ menular = obyekt.selecet_barcha_menular()
 async def bot_start(message: types.Message):
     text = message.text
     print(text)
-    maxsulotlar = obyekt.select_maxsulotlar(tur=text)
+    tur = obyekt.select_type(nomi=text)
+    maxsulotlar = obyekt.select_maxsulotlar(tur_id=tur[0])
     j = 0
     index = 0
     keys = []
@@ -59,7 +60,7 @@ async def bot_start(message: types.Message):
         else:
             keys[index].append(KeyboardButton(text=f'{menu[1]}', ))
         j += 1
-    keys.append([KeyboardButton(text='Bosh menu ⬆️')])
+    keys.append([KeyboardButton(text='Bosh menu ')])
     maxsulot_buttons = ReplyKeyboardMarkup(keyboard=keys, resize_keyboard=True)
     user_id = message.from_user.id
     await bot.send_message(chat_id=user_id,text='Maxsulotlarni tanlang',reply_markup=maxsulot_buttons)

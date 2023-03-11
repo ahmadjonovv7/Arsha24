@@ -50,6 +50,13 @@ class Database:
         sql = "SELECT * FROM users WHERE "
         sql, paratmetrs = self.format_args(sql, kwargs)
         return sql.execute(sql, paratmetrs=paratmetrs,fetchone=True)
+
+    def select_type(self, **kwargs):
+
+        sql = "SELECT * FROM myfiles_menu WHERE "
+        sql, paratmetrs = self.format_args(sql, kwargs)
+        return self.execute(sql, paratmetrs=paratmetrs, fetchone=True)
+
     def count_user(self):
         return self.execute("SELECT COUNT(*) FROM users;",fetchone=True)
 
