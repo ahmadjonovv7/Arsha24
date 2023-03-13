@@ -53,7 +53,7 @@ class Database:
 
     def select_type(self, **kwargs):
 
-        sql = "SELECT * FROM myfiles_menu WHERE "
+        sql = "SELECT * FROM menu WHERE "
         sql, paratmetrs = self.format_args(sql, kwargs)
         return self.execute(sql, paratmetrs=paratmetrs, fetchone=True)
 
@@ -82,25 +82,25 @@ class Database:
 
     def selecet_barcha_menular(self):
         sql = """
-           SELECT * FROM myfiles_menu 
+           SELECT * FROM menu 
            """
         return self.execute(sql,fetchall=True)
 
     def select_maxsulotlar(self, **kwargs):
 
-        sql = "SELECT * FROM myfiles_maxsulot WHERE "
+        sql = "SELECT * FROM maxsulotlar WHERE "
         sql, paratmetrs = self.format_args(sql, kwargs)
         return self.execute(sql, paratmetrs=paratmetrs,fetchall=True)
 
     def select_maxsulot(self, **kwargs):
 
-        sql = "SELECT * FROM myfiles_maxsulot WHERE "
+        sql = "SELECT * FROM maxsulot WHERE "
         sql, paratmetrs = self.format_args(sql, kwargs)
         return self.execute(sql, paratmetrs=paratmetrs,fetchone=True)
 
     def selecet_XAMMA_maxsulotlar(self):
         sql = """
-           SELECT * FROM myfiles_maxsulot 
+           SELECT * FROM maxsulotlar 
            """
         return self.execute(sql,fetchall=True)
 def logger(statement):
