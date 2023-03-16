@@ -29,3 +29,22 @@ class Azolar(models.Model):
 
 
 
+class Karzinka(models.Model):
+    nomi = models.CharField(max_length=30)
+    rasm = models.CharField(max_length=200)
+    narxi = models.IntegerField()
+    son = models.IntegerField()
+    tg_id = models.IntegerField()
+    ism = models.CharField(max_length=40)
+
+
+
+
+
+
+
+
+
+
+
+

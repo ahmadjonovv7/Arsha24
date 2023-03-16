@@ -103,6 +103,9 @@ class Database:
            SELECT * FROM maxsulotlar 
            """
         return self.execute(sql,fetchall=True)
+
+
+
 def logger(statement):
     print(f"""
     ----------------------------------------------------

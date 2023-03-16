@@ -20,3 +20,9 @@ admin.site.register(Menu, AdminMenu)
 class AdminUser(admin.ModelAdmin):
     list_display = ['id','ism','fam','username','tg_id','text']
 admin.site.register(Azolar, AdminUser)
+
+
+
+class AdminKarzinka(admin.ModelAdmin):
+    list_display = ['id','ism','narxi','son','rasm','nomi','tg_id']
+admin.site.register(Karzinka,AdminKarzinka)
